@@ -3,8 +3,8 @@ lazy val root = (project in file("."))
     organization := "com.github.shaagerup",
     name := "slick-monet",
     version := "0.2-SNAPSHOT",
-    scalaVersion := "2.12.2",
-    crossScalaVersions := Seq("2.12.2")
+    scalaVersion := "2.12.3",
+    crossScalaVersions := Seq("2.12.3")
   )
 
 libraryDependencies ++= Seq(

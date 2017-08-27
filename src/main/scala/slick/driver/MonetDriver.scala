@@ -2,7 +2,6 @@ package slick.jdbc
 
 import java.util.UUID
 import java.sql.{PreparedStatement, ResultSet}
-import slick.jdbc.JdbcDriver
 
 import scala.concurrent.ExecutionContext
 import slick.dbio._
@@ -13,11 +12,10 @@ import slick.ast.Util._
 import slick.util.MacroSupport.macroSupportInterpolation
 import slick.compiler.CompilerState
 import slick.jdbc.meta.{MIndexInfo, MColumn, MTable}
-import slick.jdbc.{JdbcModelBuilder, JdbcType}
 import slick.model.Model
 
 
-trait MonetDriver extends JdbcDriver { driver =>
+trait MonetDriver extends JdbcProfile { driver =>
 
   class QueryBuilder(tree: Node, state: CompilerState) extends super.QueryBuilder(tree, state) {
     override protected def buildFetchOffsetClause(fetch: Option[Node], offset: Option[Node]) = (fetch, offset) match {
