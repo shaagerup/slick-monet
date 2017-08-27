@@ -1,8 +1,8 @@
-package slick.driver
+package slick.jdbc
 
 import java.util.UUID
 import java.sql.{PreparedStatement, ResultSet}
-import slick.driver.JdbcDriver
+import slick.jdbc.JdbcDriver
 
 import scala.concurrent.ExecutionContext
 import slick.dbio._
