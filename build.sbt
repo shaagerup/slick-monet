@@ -4,7 +4,11 @@ lazy val root = (project in file("."))
     name := "slick-monet",
     version := "0.2-SNAPSHOT",
     scalaVersion := "2.12.3",
-    crossScalaVersions := Seq("2.12.3")
+    crossScalaVersions := Seq("2.12.3"),
+    credentials += Credentials("Artifactory Realm", "artifactory.cerno.dk", sys.env.get("ARTIFACTORY_USERNAME").mkString, sys.env.get("ARTIFACTORY_PASSWORD").mkString),
+    resolvers +=
+      "Artifactory" at "https://artifactory.cerno.dk/artifactory/cerno/",
+    publishTo := Some("Artifactory Realm" at "https://artifactory.cerno.dk/artifactory/cerno;build.timestamp=" + new java.util.Date().getTime)
   )
 
 libraryDependencies ++= Seq(
